@@ -2,7 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\Order;
+use App\Models\User;
+use App\Timeline\OrderTimelinePresenter;
+use App\Timeline\UserTimelinePresenter;
 use Illuminate\Support\ServiceProvider;
+use tehwave\Timelines\Timeline;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Timeline::present(Order::class, OrderTimelinePresenter::class);
+        Timeline::present(User::class, UserTimelinePresenter::class);
     }
 }

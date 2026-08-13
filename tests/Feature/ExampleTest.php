@@ -2,18 +2,17 @@
 
 namespace Tests\Feature;
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
-    /**
-     * A basic test example.
-     */
-    public function test_the_application_returns_a_successful_response(): void
-    {
-        $response = $this->get('/');
+    use LazilyRefreshDatabase;
 
-        $response->assertStatus(200);
+    public function test_the_order_list_has_a_useful_empty_state(): void
+    {
+        $this->get('/')
+            ->assertOk()
+            ->assertSee('Run the database seeder to add the demo orders.');
     }
 }
