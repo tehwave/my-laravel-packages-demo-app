@@ -6,7 +6,9 @@
     "keywords": [
         "laravel",
         "demo",
-        "timelines"
+        "timelines",
+        "achievements",
+        "shortcodes"
     ],
     "license": "MIT",
     "require": {
