@@ -23,4 +23,20 @@
             <div class="demo-card p-6 text-slate-600">Run the database seeder to add the demo orders.</div>
         @endforelse
     </div>
+
+    <section class="mt-14" aria-labelledby="package-demos">
+        <h2 id="package-demos" class="text-2xl font-semibold tracking-tight text-slate-950">Package demos</h2>
+        <div class="mt-5 grid gap-5 md:grid-cols-2">
+            <a href="{{ route('achievements.show') }}" class="demo-card block p-6 transition hover:-translate-y-0.5 hover:border-amber-300">
+                <p class="text-sm font-semibold text-amber-700">Laravel Achievements</p>
+                <h3 class="mt-2 text-xl font-semibold text-slate-950">Unlock an achievement</h3>
+                <p class="mt-3 text-slate-600">Exercise the model trait, metadata, persistence, and idempotent unlock flow.</p>
+            </a>
+            <a href="{{ route('shortcodes.show') }}" class="demo-card block p-6 transition hover:-translate-y-0.5 hover:border-indigo-300">
+                <p class="text-sm font-semibold text-indigo-700">Laravel Shortcodes</p>
+                <h3 class="mt-2 text-xl font-semibold text-slate-950">Compile a shortcode</h3>
+                <p class="mt-3 text-slate-600">Edit source content and inspect the safely rendered application shortcode.</p>
+            </a>
+        </div>
+    </section>
 </x-layouts.app>

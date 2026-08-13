@@ -1,15 +1,17 @@
 # My Laravel Packages Demo App
 
-A small, conventional Laravel application for checking Peter Jørgensen's packages in a real host app. The first scenario exercises `tehwave/laravel-timelines` through Blade, application-owned Livewire, Filament 5, and Laravel Nova 5.
+A small, conventional Laravel application for checking Peter Jørgensen's packages in a real host app. It exercises `tehwave/laravel-timelines`, `tehwave/laravel-achievements`, and `tehwave/laravel-shortcodes` through focused consumer scenarios.
 
-This is a hands-on UX and DX check, not a compatibility harness. The application owns its order domain, authorization, timeline recording, retrieval, eager loading, ordering, and pagination. Each integration receives prepared timeline entries and only presents them.
+This is a hands-on UX and DX check, not a compatibility harness. The Timelines scenario keeps its domain, authorization, recording, retrieval, eager loading, ordering, and pagination in the application. Achievements and Shortcodes use ordinary Blade requests so their package APIs remain the thing being judged.
 
 ## Setup
 
-The Composer path repository expects this app and `laravel-timelines` to be sibling directories:
+The Composer path repositories expect this app and all three packages to be sibling directories:
 
 ```text
 webdev/
+├── laravel-achievements/
+├── laravel-shortcodes/
 ├── laravel-timelines/
 └── my-laravel-packages-demo-app/
 ```
@@ -43,6 +45,8 @@ Password: password
 - `/orders/1` compares the Blade component with an application-owned Livewire component.
 - `/admin/orders/1` presents the same history in the native Filament schema component.
 - `/nova/resources/orders/1` presents it in the native Nova card.
+- `/achievements` unlocks one achievement for the seeded demo user through the package's model trait.
+- `/shortcodes` compiles an application-defined shortcode from editable, escaped source.
 
 The Blade and Livewire examples intentionally use separate cursor names so both prepared paginators can coexist on one page.
 
@@ -54,6 +58,9 @@ The Blade and Livewire examples intentionally use separate cursor names so both 
 - Filament composes the timeline inside its normal resource detail schema.
 - Nova composes the card on the resource detail page at full width.
 - Empty orders stay presentable without adding retrieval behavior to the package components.
+- The achievement starts locked, unlocks once, and stays unlocked after refresh.
+- The shortcode playground compiles edited source through the application-defined callout.
+- Raw HTML appears as escaped text in the shortcode preview and never executes.
 - Mobile layouts do not overflow horizontally.
 
 Automated tests stay deliberately small:

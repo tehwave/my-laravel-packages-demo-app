@@ -16,10 +16,12 @@
                     My Laravel Packages Demo App
                 </a>
 
-                <nav class="flex w-full items-center justify-between gap-4 text-sm font-medium text-slate-600 sm:w-auto sm:justify-start" aria-label="Demo surfaces">
+                <nav class="flex w-full flex-wrap items-center gap-x-4 gap-y-2 text-sm font-medium text-slate-600 sm:w-auto" aria-label="Demo surfaces">
                     <a href="{{ route('orders.index') }}" class="hover:text-indigo-700">Blade &amp; Livewire</a>
                     <a href="/admin" class="hover:text-indigo-700">Filament</a>
                     <a href="/nova" class="hover:text-indigo-700">Nova</a>
+                    <a href="{{ route('achievements.show') }}" class="hover:text-amber-700">Achievements</a>
+                    <a href="{{ route('shortcodes.show') }}" class="hover:text-indigo-700">Shortcodes</a>
                 </nav>
             </div>
         </header>
