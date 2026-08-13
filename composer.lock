@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "848e83e34eefa855b39790969d1b4c96",
+    "content-hash": "922c1aa1109a7752289c76f2ccde0900",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -9348,12 +9348,174 @@
             "time": "2026-07-21T15:13:06+00:00"
         },
         {
+            "name": "tehwave/laravel-achievements",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../laravel-achievements",
+                "reference": "ad5bdd70f66511b9b721b865e083d21bc9a65def"
+            },
+            "require": {
+                "illuminate/console": "^12.0|^13.0",
+                "illuminate/database": "^12.0|^13.0",
+                "illuminate/filesystem": "^12.0|^13.0",
+                "illuminate/support": "^12.0|^13.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "brianium/paratest": "^7.4",
+                "laravel/pint": "^1.21",
+                "orchestra/testbench": "^10.0|^11.0",
+                "phpunit/phpunit": "^11.5.50"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "tehwave\\Achievements\\AchievementsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "tehwave\\Achievements\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "tehwave\\Achievements\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "@php vendor/bin/phpunit"
+                ],
+                "coverage": [
+                    "@php vendor/bin/phpunit --coverage-html coverage"
+                ],
+                "sniff": [
+                    "@php vendor/bin/pint --test"
+                ],
+                "lint": [
+                    "@php vendor/bin/pint"
+                ],
+                "paratest": [
+                    "@php vendor/bin/paratest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Peter Jørgensen",
+                    "email": "peterchrjoergensen@gmail.com",
+                    "homepage": "https://peterchrjoergensen.dk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Simple, elegant Achievements the Laravel way",
+            "homepage": "https://github.com/tehwave/laravel-achievements",
+            "keywords": [
+                "achievements",
+                "badges",
+                "laravel",
+                "package",
+                "php",
+                "tehwave"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "tehwave/laravel-shortcodes",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../laravel-shortcodes",
+                "reference": "026437a6232a3b98060b8730189cf6e9443fdfe3"
+            },
+            "require": {
+                "illuminate/console": "^12.0|^13.0",
+                "illuminate/database": "^12.0|^13.0",
+                "illuminate/encryption": "^12.0|^13.0",
+                "illuminate/support": "^12.0|^13.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "brianium/paratest": "^7.4",
+                "laravel/pint": "^1.21",
+                "orchestra/testbench": "^10.0|^11.0",
+                "phpunit/phpunit": "^11.5.50"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "tehwave\\Shortcodes\\Providers\\ShortcodesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "tehwave\\Shortcodes\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "tehwave\\Shortcodes\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "@php vendor/bin/phpunit"
+                ],
+                "coverage": [
+                    "@php vendor/bin/phpunit --coverage-html coverage"
+                ],
+                "sniff": [
+                    "@php vendor/bin/pint --test"
+                ],
+                "lint": [
+                    "@php vendor/bin/pint"
+                ],
+                "paratest": [
+                    "@php vendor/bin/paratest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Peter Jørgensen",
+                    "email": "peterchrjoergensen@gmail.com",
+                    "homepage": "https://peterchrjoergensen.dk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Simple, elegant WordPress-like Shortcodes the Laravel way",
+            "homepage": "https://github.com/tehwave/laravel-shortcodes",
+            "keywords": [
+                "laravel",
+                "package",
+                "php",
+                "shortcodes",
+                "tehwave",
+                "wordpress"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "tehwave/laravel-timelines",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "../laravel-timelines",
-                "reference": "bcfe5f78d2bfae2a0b41d1cbe512a88f7ac1e7c4"
+                "reference": "a48f48db0088d049ba1317e71cfbd94094f8b03c"
             },
             "require": {
                 "ext-intl": "*",
@@ -12638,6 +12800,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "tehwave/laravel-achievements": 20,
+        "tehwave/laravel-shortcodes": 20,
         "tehwave/laravel-timelines": 20
     },
     "prefer-stable": true,
