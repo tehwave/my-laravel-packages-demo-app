@@ -1,0 +1,346 @@
+.timelines:where(:not([data-timelines-unstyled])) {
+    --timelines-font-family: ui-sans-serif, system-ui, sans-serif;
+    --timelines-color-text: #1e293b;
+    --timelines-color-muted: #64748b;
+    --timelines-color-line: #cbd5e1;
+    --timelines-color-marker: #4f46e5;
+    --timelines-color-link: #4f46e5;
+    --timelines-color-before: #991b1b;
+    --timelines-color-after: #166534;
+    --timelines-color-surface: #ffffff;
+    --timelines-space: 1rem;
+    --timelines-radius: 0.5rem;
+
+    color: var(--timelines-color-text);
+    font-family: var(--timelines-font-family);
+    line-height: 1.5;
+    max-inline-size: 100%;
+    overflow-wrap: anywhere;
+}
+
+:where(.dark .fi-timelines) .timelines:where(:not([data-timelines-unstyled])) {
+    --timelines-color-text: #f1f5f9;
+    --timelines-color-muted: #94a3b8;
+    --timelines-color-line: #475569;
+    --timelines-color-marker: #818cf8;
+    --timelines-color-link: #a5b4fc;
+    --timelines-color-before: #fca5a5;
+    --timelines-color-after: #86efac;
+    --timelines-color-surface: #111827;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__group + .timelines__group {
+    margin-block-start: calc(var(--timelines-space) * 0.5);
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__date {
+    color: var(--timelines-color-muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 calc(var(--timelines-space) * 0.75);
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__items {
+    border-inline-start: 1px solid var(--timelines-color-line);
+    list-style: none;
+    margin-block: 0 calc(var(--timelines-space) * 2);
+    margin-inline: calc(var(--timelines-space) * 0.4) 0;
+    padding: 0 0 0 calc(var(--timelines-space) * 1.5);
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__item {
+    min-inline-size: 0;
+    padding-block: 0 calc(var(--timelines-space) * 1.5);
+    position: relative;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__item:last-child {
+    padding-block-end: calc(var(--timelines-space) * 0.25);
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__marker {
+    background: var(--timelines-color-marker);
+    border: 3px solid var(--timelines-color-surface);
+    border-radius: 999px;
+    box-sizing: border-box;
+    height: 0.75rem;
+    inset-inline-start: calc(var(--timelines-space) * -1.9);
+    position: absolute;
+    top: 0.35rem;
+    width: 0.75rem;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__message {
+    color: var(--timelines-color-text);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__meta {
+    color: var(--timelines-color-muted);
+    font-size: 0.875rem;
+    line-height: 1.45;
+    margin-block-start: calc(var(--timelines-space) * 0.25);
+}
+
+.timelines:where(:not([data-timelines-unstyled])) a.timelines__actor,
+.timelines:where(:not([data-timelines-unstyled])) a.timelines__value {
+    color: var(--timelines-color-link);
+    text-decoration: underline;
+    text-decoration-thickness: from-font;
+    text-underline-offset: 0.125em;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) a.timelines__actor:hover,
+.timelines:where(:not([data-timelines-unstyled])) a.timelines__value:hover,
+.timelines:where(:not([data-timelines-unstyled])) .timelines__summary:hover {
+    text-decoration-thickness: 0.125em;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__changes-heading {
+    color: var(--timelines-color-muted);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-block-start: var(--timelines-space);
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__changes {
+    border: 0;
+    font-size: 0.9375rem;
+    margin-block: calc(var(--timelines-space) * 0.5) var(--timelines-space);
+    padding: 0;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__change {
+    align-items: start;
+    column-gap: var(--timelines-space);
+    display: grid;
+    grid-template-columns: minmax(7rem, 0.35fr) minmax(0, 1fr);
+    min-inline-size: 0;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__change + .timelines__change {
+    margin-block-start: calc(var(--timelines-space) * 0.625);
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__change > dt,
+.timelines:where(:not([data-timelines-unstyled])) .timelines__context-value > dt,
+.timelines:where(:not([data-timelines-unstyled])) .timelines__value-child > dt {
+    color: var(--timelines-color-muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+    min-inline-size: 0;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__change > dd {
+    align-items: baseline;
+    display: grid;
+    gap: calc(var(--timelines-space) * 0.375);
+    grid-template-columns: minmax(0, auto) auto minmax(0, 1fr);
+    margin: 0;
+    min-inline-size: 0;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__before {
+    color: var(--timelines-color-before);
+    min-inline-size: 0;
+    text-decoration: line-through;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__after {
+    color: var(--timelines-color-after);
+    min-inline-size: 0;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__before a.timelines__value,
+.timelines:where(:not([data-timelines-unstyled])) .timelines__after a.timelines__value {
+    color: inherit;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__change-arrow {
+    color: var(--timelines-color-muted);
+    text-decoration: none;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__details {
+    margin-block-start: var(--timelines-space);
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__summary {
+    color: var(--timelines-color-link);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    list-style: none;
+    text-decoration: underline;
+    text-underline-offset: 0.125em;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__summary::-webkit-details-marker {
+    display: none;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__summary::after {
+    content: " ›";
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 120ms ease;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) details[open] > .timelines__summary::after {
+    transform: rotate(90deg);
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__context,
+.timelines:where(:not([data-timelines-unstyled])) .timelines__value-children {
+    margin: calc(var(--timelines-space) * 0.75) 0 0;
+    padding: 0;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__context-value,
+.timelines:where(:not([data-timelines-unstyled])) .timelines__value-child {
+    column-gap: calc(var(--timelines-space) * 0.75);
+    display: grid;
+    grid-template-columns: minmax(7rem, 0.35fr) minmax(0, 1fr);
+    min-inline-size: 0;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__context-value + .timelines__context-value,
+.timelines:where(:not([data-timelines-unstyled])) .timelines__value-child + .timelines__value-child {
+    margin-block-start: calc(var(--timelines-space) * 0.5);
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__context-value > dd,
+.timelines:where(:not([data-timelines-unstyled])) .timelines__value-child > dd {
+    margin: 0;
+    min-inline-size: 0;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__empty {
+    color: var(--timelines-color-muted);
+    font-size: 0.875rem;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__pagination {
+    margin-block-start: calc(var(--timelines-space) * 1.5);
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__pagination-list {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--timelines-space) * 0.375);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__pagination-item {
+    margin: 0;
+    min-inline-size: 0;
+    padding: 0;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__pagination-link {
+    align-items: center;
+    border: 1px solid var(--timelines-color-line);
+    border-radius: var(--timelines-radius);
+    box-sizing: border-box;
+    color: var(--timelines-color-link);
+    display: inline-flex;
+    font-size: 0.875rem;
+    justify-content: center;
+    line-height: 1;
+    min-block-size: 2.25rem;
+    min-inline-size: 2.25rem;
+    padding: calc(var(--timelines-space) * 0.5) calc(var(--timelines-space) * 0.625);
+    text-decoration: none;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) a.timelines__pagination-link:hover {
+    border-color: var(--timelines-color-link);
+    text-decoration: underline;
+    text-underline-offset: 0.125em;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__pagination-link--current {
+    background: var(--timelines-color-link);
+    border-color: var(--timelines-color-link);
+    color: var(--timelines-color-surface);
+    font-weight: 700;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__pagination-link--disabled {
+    color: var(--timelines-color-muted);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.timelines:where(:not([data-timelines-unstyled])) .timelines__pagination-separator {
+    color: var(--timelines-color-muted);
+    display: inline-block;
+    padding-inline: calc(var(--timelines-space) * 0.25);
+}
+
+.timelines:where(:not([data-timelines-unstyled])) a:focus-visible,
+.timelines:where(:not([data-timelines-unstyled])) summary:focus-visible {
+    outline: 2px solid var(--timelines-color-link);
+    outline-offset: 2px;
+}
+
+@media (max-width: 36rem) {
+    .timelines:where(:not([data-timelines-unstyled])) .timelines__items {
+        margin-inline-start: calc(var(--timelines-space) * 0.25);
+        padding-inline-start: var(--timelines-space);
+    }
+
+    .timelines:where(:not([data-timelines-unstyled])) .timelines__marker {
+        inset-inline-start: calc(var(--timelines-space) * -1.4);
+    }
+
+    .timelines:where(:not([data-timelines-unstyled])) .timelines__change,
+    .timelines:where(:not([data-timelines-unstyled])) .timelines__context-value,
+    .timelines:where(:not([data-timelines-unstyled])) .timelines__value-child {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .timelines:where(:not([data-timelines-unstyled])) .timelines__change > dd {
+        gap: calc(var(--timelines-space) * 0.125);
+        grid-template-columns: minmax(0, 1fr);
+        margin-block-start: calc(var(--timelines-space) * 0.25);
+    }
+
+    .timelines:where(:not([data-timelines-unstyled])) .timelines__context-value > dd,
+    .timelines:where(:not([data-timelines-unstyled])) .timelines__value-child > dd {
+        margin-block-start: calc(var(--timelines-space) * 0.125);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .timelines:where(:not([data-timelines-unstyled])) .timelines__summary::after {
+        transition: none;
+    }
+}
+
+@media print {
+    .timelines:where(:not([data-timelines-unstyled])) details > * {
+        display: block;
+    }
+
+    .timelines:where(:not([data-timelines-unstyled])) details::details-content {
+        content-visibility: visible;
+    }
+
+    .timelines:where(:not([data-timelines-unstyled])) .timelines__summary::after,
+    .timelines:where(:not([data-timelines-unstyled])) .timelines__pagination {
+        display: none;
+    }
+
+    .timelines:where(:not([data-timelines-unstyled])) .timelines__item {
+        break-inside: avoid;
+    }
+}
