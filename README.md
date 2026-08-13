@@ -14,7 +14,7 @@ webdev/
 └── my-laravel-packages-demo-app/
 ```
 
-Nova is a separately licensed dependency. Configure your own Nova Composer credentials locally before installing dependencies. Composer writes them to the ignored `auth.json`; never commit that file.
+Nova is a separately licensed dependency. Configure your own Nova Composer credentials locally before installing dependencies. Composer writes them to the ignored `auth.json`; never commit that file. This app stays on the licensed Laravel 12-compatible Nova 5.3 line used for the acceptance check.
 
 ```bash
 composer install
